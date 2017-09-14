@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.critico.sistemacontrolmedico.activity.InicialActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal"
+        android:layout_marginRight="10dp">
+
+        <TextView
+            android:id="@+id/lblFechaNac"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Fecha de Nacimiento:"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="19dp" />
+
+        <Button
+            android:id="@+id/btnCalendario"
+            android:layout_width="wrap_content"
+            android:layout_height="37dp"
+            android:layout_weight="0.35"
+            android:elevation="2dp"
+            android:text="Ok" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtFechaNac"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:gravity="center"
+        android:hint="Su fecha de Nacimiento es..."
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="19dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="19dp"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:text="Sexo:"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="5dp">
+
+        <RadioGroup
+            android:id="@+id/rgSexo"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/rbHombre"
+                android:layout_weight="1"
+                android:checked="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hombre"/>
+
+            <RadioButton
+                android:id="@+id/rbMujer"
+                android:layout_weight="1"
+                android:checked="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Mujer"/>
+        </RadioGroup>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="19dp"
+            android:layout_marginLeft="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:text="Estatura:"/>
+
+        <EditText
+            android:id="@+id/txtEstatura"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:hint="Estatura en Centimetros"
+            android:inputType="number" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="19dp"
+            android:layout_marginLeft="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:text="Peso:"/>
+
+        <EditText
+            android:id="@+id/txtPeso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:hint="Peso en Kilos"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="19dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:text="Porcentaje de Grasa:"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+
+        <EditText
+            android:id="@+id/txtGrasa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="% de Grasa"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btnCalculadora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Calculadora" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Actividad:"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="19dp"
+            android:layout_marginLeft="10dp"/>
+        <Spinner
+            android:id="@+id/spActividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <Button
+            android:id="@+id/btnCalcular"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="CALCULAR"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textSize="23dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

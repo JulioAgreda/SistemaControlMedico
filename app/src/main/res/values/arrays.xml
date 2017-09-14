@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="actividades">
+        <item>Sedentario</item>
+        <item>Actividad Ligera</item>
+        <item>Actividad Moderada</item>
+        <item>Actividad Intensa</item>
+        <item>Actividad muy Intensa</item>
+    </string-array>
+</resources>
+
+
+

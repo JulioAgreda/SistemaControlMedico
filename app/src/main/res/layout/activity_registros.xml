@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    tools:context="com.critico.sistemacontrolmedico.activity.RegistrosActivity">
+
+    <TextView
+        android:id="@+id/lblFechaNac"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:text="REGISTROS:"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:textSize="19dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textSize="19dp"
+            android:layout_marginLeft="10dp"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:text="Peso:"/>
+
+        <EditText
+            android:id="@+id/txtPeso"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="3"
+            android:gravity="center"
+            android:hint="Peso en Kilos"
+            android:inputType="number" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="19dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        android:text="Porcentaje de Grasa:"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="5dp">
+
+        <EditText
+            android:id="@+id/txtGrasa"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:hint="% de Grasa"
+            android:inputType="number" />
+
+        <Button
+            android:id="@+id/btnCalculadora"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Calculadora" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Actividad:"
+            android:textAppearance="@style/TextAppearance.AppCompat"
+            android:textSize="19dp"
+            android:layout_marginLeft="10dp"/>
+        <Spinner
+            android:id="@+id/spActividad"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_weight="2" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="15dp">
+
+        <Button
+            android:id="@+id/btnRegistrar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="0dp"
+            android:text="REGISTRAR"
+            android:textAppearance="@style/TextAppearance.AppCompat.Button"
+            android:textSize="23dp" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
