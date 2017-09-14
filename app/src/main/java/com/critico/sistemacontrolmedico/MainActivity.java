@@ -9,14 +9,16 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.TextView;
 
+import com.critico.sistemacontrolmedico.activity.InicialActivity;
 import com.critico.sistemacontrolmedico.activity.RegistrosActivity;
 
 import java.security.Principal;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
-
 {
+    private TextView tmb, cmp, cbp, csp, imc, pg, mg, msg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -27,7 +29,34 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setSupportActionBar(toolbar);
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(this);
+        fab.setOnClickListener(this);tmb = (TextView)findViewById(R.id.txtTmb);
+
+        cmp = (TextView)findViewById(R.id.txtCmp);
+        cbp = (TextView)findViewById(R.id.txtCbp);
+        csp = (TextView)findViewById(R.id.txtCsp);
+        imc = (TextView)findViewById(R.id.txtImc);
+        pg = (TextView)findViewById(R.id.txtPg);
+        mg = (TextView)findViewById(R.id.txtMdg);
+        msg = (TextView)findViewById(R.id.txtMsg);
+
+        int intTmb = getIntent().getIntExtra("tmb", 0);
+        int intCmp = getIntent().getIntExtra("cmp", 0);
+        int intCbp = getIntent().getIntExtra("cbp", 0);
+        int intCsp = getIntent().getIntExtra("csp", 0);
+        int intImc = getIntent().getIntExtra("imc", 0);
+        int intPg = getIntent().getIntExtra("pgrasa", 0);
+        int intMg = getIntent().getIntExtra("mg", 0);
+        int intMsg = getIntent().getIntExtra("msg", 0);
+
+        tmb.setText(""+intTmb);
+        cmp.setText(""+intCmp);
+        cbp.setText(""+intCbp);
+        csp.setText(""+intCsp);
+        cbp.setText(""+intImc+" %");
+        csp.setText(""+intPg);
+
+
+
     }
 
     @Override
@@ -61,8 +90,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     {
         if(view.getId() == R.id.fab)
         {
-            Intent intent = new Intent(getApplicationContext(), RegistrosActivity.class);
+            Intent intent = new Intent(getApplicationContext(), InicialActivity.class);
             startActivity(intent);
         }
     }
+
+
 }
