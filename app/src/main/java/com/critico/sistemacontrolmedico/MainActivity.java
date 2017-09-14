@@ -18,7 +18,7 @@ import java.security.Principal;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener
 {
-    private TextView tmb, cmp, cbp, csp, imc, pg, mg, msg;
+    private TextView alt, pes, tmb, cmp, cbp, csp, imc, pg, mg, msg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
@@ -31,6 +31,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(this);tmb = (TextView)findViewById(R.id.txtTmb);
 
+        alt = (TextView)findViewById(R.id.txtAltura);
+        pes = (TextView)findViewById(R.id.txtPeso);
         cmp = (TextView)findViewById(R.id.txtCmp);
         cbp = (TextView)findViewById(R.id.txtCbp);
         csp = (TextView)findViewById(R.id.txtCsp);
@@ -39,21 +41,32 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         mg = (TextView)findViewById(R.id.txtMdg);
         msg = (TextView)findViewById(R.id.txtMsg);
 
+        int inAlt = getIntent().getIntExtra("alt", 0);
+        int intPes = getIntent().getIntExtra("pes", 0);
+        int intPg = getIntent().getIntExtra("pg", 0);
+
+
+        int intImc = getIntent().getIntExtra("imc", 0);
         int intTmb = getIntent().getIntExtra("tmb", 0);
         int intCmp = getIntent().getIntExtra("cmp", 0);
-        int intCbp = getIntent().getIntExtra("cbp", 0);
         int intCsp = getIntent().getIntExtra("csp", 0);
-        int intImc = getIntent().getIntExtra("imc", 0);
-        int intPg = getIntent().getIntExtra("pgrasa", 0);
-        int intMg = getIntent().getIntExtra("mg", 0);
-        int intMsg = getIntent().getIntExtra("msg", 0);
+        int intCbp = getIntent().getIntExtra("cbp", 0);
 
+
+
+        //int intMg = getIntent().getIntExtra("mg", 0);
+        //int intMsg = getIntent().getIntExtra("msg", 0);
+
+        alt.setText(""+inAlt);
+        pes.setText(""+intPes);
+        pg.setText(""+intPg);
+
+
+        imc.setText(""+intImc);
         tmb.setText(""+intTmb);
         cmp.setText(""+intCmp);
-        cbp.setText(""+intCbp);
         csp.setText(""+intCsp);
-        cbp.setText(""+intImc+" %");
-        csp.setText(""+intPg);
+        cbp.setText(""+intCbp);
 
 
 

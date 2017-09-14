@@ -48,7 +48,6 @@ public class InicialActivity extends AppCompatActivity
         varEstatura = (EditText)findViewById(R.id.txtEstatura);
         varPromedioGrasa = (EditText)findViewById(R.id.txtGrasa);
 
-
         intEdad = 31;
 
         rgbHombre = (RadioButton) findViewById(R.id.rbHombre);
@@ -59,8 +58,7 @@ public class InicialActivity extends AppCompatActivity
             @Override
             public void onClick(View view)
             {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                startActivity(intent);
+                Calcular();
             }
         });
     }
@@ -99,6 +97,10 @@ public class InicialActivity extends AppCompatActivity
     }
     public void Calcular()
     {
+        intEstatura = Integer.valueOf(varEstatura.getText().toString());
+        intPeso = Integer.valueOf(varPeso.getText().toString());
+        intPromedioGrasa = Integer.valueOf(varPromedioGrasa.getText().toString());
+
         if (rgbHombre.isChecked())
         {
             double db;
@@ -195,12 +197,18 @@ public class InicialActivity extends AppCompatActivity
     {
         Intent intent = new Intent(getApplicationContext(), MainActivity.class);
 
+        intent.putExtra("alt", intEstatura);
+        intent.putExtra("pes", intPeso);
+        intent.putExtra("pgrasa", intPromedioGrasa);
+
+        intent.putExtra("imc", imc);
         intent.putExtra("tmb", mb);
         intent.putExtra("cmp", cmp);
-        intent.putExtra("cbp", cb);
         intent.putExtra("csp", cs);
-        intent.putExtra("imc", imc);
-        intent.putExtra("pgrasa", intPromedioGrasa);
+        intent.putExtra("cbp", cb);
+
+
+
 
         startActivity(intent);
     }
