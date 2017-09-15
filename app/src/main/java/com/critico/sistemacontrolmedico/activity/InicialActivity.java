@@ -1,8 +1,10 @@
 package com.critico.sistemacontrolmedico.activity;
 
 import android.content.Intent;
+import android.icu.util.Calendar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
@@ -14,17 +16,22 @@ import android.widget.Toast;
 import com.critico.sistemacontrolmedico.MainActivity;
 import com.critico.sistemacontrolmedico.R;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class InicialActivity extends AppCompatActivity implements View.OnClickListener
 {
 
     private Spinner listaActividades, listaDia, listaMes, listaAño;
     private ArrayAdapter sp, sd, sm, sa;
-    private String actividad, dia, mes, año;
+    private String actividad, dia, mes, año,stringMes;
 
     private Button botonCalendario, botonCalculadora, botonCalcular;
     private EditText varPeso, varEstatura, varEdad, varPromedioGrasa;
     private RadioButton rgbHombre, rgbMujer;
     private int intMb, intCmp, intCb, intCs, intImc, intEstatura, intPeso, intEdad, intPromedioGrasa;
+
+    private int intDia, intMes, intAño;
 
 
     @Override
@@ -37,6 +44,7 @@ public class InicialActivity extends AppCompatActivity implements View.OnClickLi
 
         botonCalcular.setOnClickListener(this);
         botonCalculadora.setOnClickListener(this);
+        botonCalendario.setOnClickListener(this);
     }
 
     public void iniciando()
@@ -131,7 +139,6 @@ public class InicialActivity extends AppCompatActivity implements View.OnClickLi
         double res = 0;
         double temp = 0.0;
         temp = cm/100.00;
-        Toast.makeText (this, "Temp: "+temp,Toast.LENGTH_LONG).show();
         res = (temp*temp);
         return res;
 
@@ -170,6 +177,60 @@ public class InicialActivity extends AppCompatActivity implements View.OnClickLi
         }
     }
 
+    public void obtenerFechaNac()
+    {
+        switch(stringMes)
+        {
+            case "Enero":
+                intMes = 1;
+                 break;
+
+            case "Febrero":
+                intMes = 2;
+                break;
+
+            case "Marzo":
+                intMes = 3;
+            break;
+
+            case "Abril":
+                intMes = 4;
+                break;
+
+            case "Mayo":
+                intMes = 5;
+                break;
+
+            case "Junio":
+                intMes = 6;
+                break;
+
+            case "Julio":
+                intMes = 7;
+                break;
+
+            case "Agosto":
+                intMes = 8;
+                break;
+
+            case "Septiembre":
+                intMes = 9;
+                break;
+
+            case "Octubre":
+                intMes = 10;
+                break;
+
+            case "Noviembre":
+                intMes = 11;
+                break;
+
+            case "Diciembre":
+                intMes = 12;
+                break;
+        }
+    }
+
     public void bajarSubirCalorias(int mb)
     {
         // Calorias para bajar de peso
@@ -194,6 +255,19 @@ public class InicialActivity extends AppCompatActivity implements View.OnClickLi
         startActivity(intent);
     }
 
+    public void fechaActual()
+    {
+        String dia, mes, año;
+        Date fechaActual = new Date();
+        SimpleDateFormat dDia = new SimpleDateFormat("dd");
+        SimpleDateFormat dMes = new SimpleDateFormat("MM");
+        SimpleDateFormat dAño = new SimpleDateFormat("yyyy");
+        dia = dDia.format(fechaActual);
+        mes = dMes.format(fechaActual);
+        año = dAño.format(fechaActual);
+
+        Toast.makeText (this, "Fecha Actual: "+dia+"-"+mes+"-"+año,Toast.LENGTH_LONG).show();
+    }
     @Override
     public void onClick(View view)
     {
@@ -206,6 +280,11 @@ public class InicialActivity extends AppCompatActivity implements View.OnClickLi
         {
             Intent intent = new Intent(getApplicationContext(), GrasaActivity.class);
             startActivity(intent);
+        }
+
+        if(view == botonCalendario)
+        {
+            fechaActual();
         }
 
     }
